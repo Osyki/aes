@@ -1,4 +1,4 @@
-from aes import AES, pad
+from aes.aes import AES, pad
 
 key = pad(b'this is my key') # need to pad to 16, 24, or 32 bytes
 iv = pad(b'this is my iv') # need to pad to 16 bytes

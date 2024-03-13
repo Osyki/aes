@@ -1,4 +1,4 @@
-from aes import AES
+from aes.aes import AES
 
 Ciphertext = 0x1a7392e3fbdbe317df61d96fb8bc1df2
 Key = 0x4a6f736875612053776f726466697368
