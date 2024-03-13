@@ -243,6 +243,19 @@ class AES:
 
         return matrix2bytes(plain_state)
 
+    def decrypt_block_first_round(self, ciphertext):
+        """
+        Decrypts the first round of 16 byte long ciphertext block.
+        """
+        assert len(ciphertext) == 16
+
+        cipher_state = bytes2matrix(ciphertext)
+        add_round_key(cipher_state, self._key_matrices[-1])
+        inv_shift_rows(cipher_state)
+        inv_sub_bytes(cipher_state)
+
+        return matrix2bytes(cipher_state)
+
     def decrypt_block(self, ciphertext):
         """
         Decrypts a single block of 16 byte long ciphertext.
